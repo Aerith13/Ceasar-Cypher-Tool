@@ -45,23 +45,12 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     bruteforceMessage.addEventListener('input', () => {
-      const message = document.getElementById('bruteforce-message').value;
-      let decodedResult = '';
-      let decryptedResult = '';
-      for (let shift = 0; shift < 26; shift++) {
-        decodedResult += `<pre>Shift ${shift}: ${caesarCipher(message, shift)}</pre>`;
-        decryptedResult += `<pre>Shift ${shift}: ${caesarCipher(message, 26 - shift)}</pre>`;
-      }
-      bruteforceResult.innerHTML = `
-        <div class="decoded">
-          <h3>Decoded Messages:</h3>
-          ${decodedResult}
-        </div>
-        <div class="decrypted">
-          <h3>Decrypted Messages:</h3>
-          ${decryptedResult}
-        </div>
-      `;
+        const message = document.getElementById('bruteforce-message').value;
+        let result = '';
+        for (let shift = 0; shift < 26; shift++) {
+            result += `Shift ${shift}: ${caesarCipher(message, shift)}\n`;
+        }
+        bruteforceResult.textContent = 'Encoded messages:\n\n' + result + '\nDecoded messages:\n\n' + result.replace(/Shift/g, 'Shift');
     });
 
     function caesarCipher(message, shift) {
