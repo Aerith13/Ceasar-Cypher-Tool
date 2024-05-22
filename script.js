@@ -50,7 +50,7 @@ document.addEventListener('DOMContentLoaded', function() {
     for (let shift = 0; shift < 26; shift++) {
       const encodedMessage = caesarCipher(message, shift);
       const decodedMessage = caesarCipher(message, 26 - shift);
-      result += `Shift ${shift}: Encoded - ${encodedMessage}, Decoded - ${decodedMessage}\n`;
+      result += `Shift ${shift}: Encoded - ${encodedMessage}, Decoded - ${decodedMessage}\n\n`;
     }
     bruteforceResult.textContent = result;
   });
