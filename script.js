@@ -141,7 +141,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
   function caesarCipher(message, shift) {
-
+ //Enforce limit(e.g, between -25 and 25)
+    shift = (shift % 26 + 26) % 26; //wrap around for negative or larger values
     let result = '';
 
     for (let i = 0; i < message.length; i++) {
@@ -160,7 +161,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
         result += String.fromCharCode(((c - 97 + shift) % 26) + 97);
 
-      } else {
+      } else if (!isNaN(c)){
+        //Numbers
+        result += message.charAt(i);
+      }
+      else {
 
         // Non-alphabetic characters
 
