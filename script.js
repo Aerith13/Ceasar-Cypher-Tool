@@ -53,14 +53,14 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Error handling for non-numeric shift
     if (isNaN(shift)) {
-      alert("Error: shift value must be a number!");
+      document.getElementById('encode-result').textContent = 'Encoded Message: NaN';
       return;
     }
 
     // Error handling for shift value outside the limits
     const shiftLimit = 25; // Define your desired limit
     if (shift < 0 || shift > shiftLimit) {
-      alert(`Error: shift value must be between 0 and ${shiftLimit}`);
+      document.getElementById('encode-result').textContent = 'Encoded Message: NaN';
       return;
     }
 
@@ -78,14 +78,14 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Error handling for non-numeric shift
     if (isNaN(shift)) {
-      alert("Error: shift value must be a number!");
+      document.getElementById('decode-result').textContent = 'Decoded Message: NaN';
       return;
     }
 
     // Error handling for shift value outside the limits
     const shiftLimit = 25; // Define your desired limit
     if (shift < 0 || shift > shiftLimit) {
-      alert(`Error: shift value must be between 0 and ${shiftLimit}`);
+      document.getElementById('decode-result').textContent = 'Decoded Message: NaN';
       return;
     }
 
