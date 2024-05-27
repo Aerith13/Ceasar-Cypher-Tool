@@ -1,68 +1,241 @@
 body {
+
     font-family: Arial, sans-serif;
+
     margin: 0;
+
     padding: 0;
-    background-color: black;
-    color: white;
+
+    color: black;
+
+    background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.282) 0%, rgba(255, 255, 255, 0.282) 100%), url('https://img.freepik.com/free-vector/stream-binary-code-design_53876-118375.jpg');
+
+
+
+    background-size: cover;
+
 }
+
+
 
 .container {
-    max-width: 800px;
+
+    max-width: 850px;
+
     margin: 0 auto;
+
     padding: 20px;
+
+    
+
 }
 
-h1, h2 {
+
+
+h1{
+
     text-align: center;
+
+    color: white;
+
+    background-color:#08630b;
+
+    border-radius: 15px;
+
+    padding: 10px 20px;
+
 }
+
+
+
+h2{
+
+    text-align: center;
+
+    color: white;
+
+    font-style: Bold;
+
+    margin: 20px;
+
+}
+
+
+
+
 
 .menu {
+
     display: flex;
+
     justify-content: center;
+
     margin-bottom: 20px;
+
 }
+
+
 
 .menu button {
+
     background-color: #4CAF50;
+
     border: none;
+
     color: white;
+
     padding: 10px 20px;
+
     text-align: center;
+
     text-decoration: none;
+
     display: inline-block;
+
     font-size: 16px;
+
     margin: 4px 2px;
+
     cursor: pointer;
+
+    border-radius: 5px;
+
+    font-style: Bold;
+
+
+
 }
+
+
 
 .content {
-    background-color: #333;
+
+    
+
+    background-color: #8cff0036;
+
+    border: 1px solid rgba(17, 255, 0, 0.192);
+
     padding: 20px;
+
     border-radius: 5px;
+
+    margin: 30px;
+
+    border-radius: 15px;
+
+    
+
+
+
+  
+
 }
+
+
+
+
 
 input {
-    width: 100%;
+
+    width: 98%;
+
     padding: 10px;
+
     margin-bottom: 10px;
+
     background-color: #444;
+
     border: none;
+
     color: white;
+
+    font-size: 16px;
+
+    
+
 }
+
+
 
 button {
+
     background-color: #4CAF50;
+
     border: none;
+
     color: white;
+
     padding: 10px 20px;
+
     text-align: center;
+
     text-decoration: none;
+
     display: inline-block;
+
     font-size: 16px;
+
     margin-bottom: 10px;
+
     cursor: pointer;
+
+    border-radius: 5px;
+
 }
 
-.hidden {
+
+
+.hidden{
+
     display: none;
+
 }
+
+
+
+input::placeholder {
+
+    color: white;
+
+    font-size: 1.2em;
+
+    font-style: bold, italic;
+
+    width: 40vw;
+
+  }
+
+
+
+table {
+
+    border-collapse: collapse;
+
+    width: 100%;
+
+    border: 3px solid black;
+
+    font-size: medium;
+
+    font-size: 20px;
+
+    color: white;
+
+  }
+
+  th, td {
+
+    padding: 5px;
+
+    border: 3px solid black;
+
+    text-align: center;
+
+    font-size: 20px;
+
+    font-weight: bolder;
+
+    color: white;
+
+  }
