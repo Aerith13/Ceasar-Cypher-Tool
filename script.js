@@ -1,7 +1,6 @@
   // This line waits for the entire HTML document to be fully loaded and parsed
 
   // before executing the code within the function. This ensures that all necessary
-
   // HTML elements are available for manipulation.
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -110,6 +109,18 @@ document.addEventListener('DOMContentLoaded', function() {
 
     const shift = parseInt(document.getElementById('encode-shift').value);
 
+    //Error handling for non-numeric shift
+    if  (isNaN(shift)){
+      alert("Error: shift value must be a number!");
+      return;
+    }
+
+    //Error handeling for shift value outside the limits
+    const shiftLimit = 25; //define you	desire limit
+    if(shift < 0 || shift > shiftLimit) {
+      alert('Error: shift value must between 0 and ${shiftLimit}'); 
+    }
+
     const encodedMessage = caesarCipher(message, shift);
 
     document.getElementById('encode-result').textContent = `Encoded Message: ${encodedMessage}`;
@@ -129,6 +140,17 @@ document.addEventListener('DOMContentLoaded', function() {
     const message = document.getElementById('decode-message').value;
 
     const shift = parseInt(document.getElementById('decode-shift').value);
+    //Error handling for non-numeric shift
+    if  (isNaN(shift)){
+      alert("Error: shift value must be a number!");
+      return;
+    }
+
+    //Error handeling for shift value outside the limits
+    const shiftLimit = 25; //define you	desire limit
+    if(shift < 0 || shift > shiftLimit) {
+      alert('Error: shift value must between 0 and ${shiftLimit}'); 
+    }
 
     const decodedMessage = caesarCipher(message, 26 - shift);
 
@@ -161,11 +183,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         result += String.fromCharCode(((c - 97 + shift) % 26) + 97);
 
-      } else if (!isNaN(c)){
-        //Numbers
-        result += message.charAt(i);
-      }
-      else {
+      } else {
 
         // Non-alphabetic characters
 
