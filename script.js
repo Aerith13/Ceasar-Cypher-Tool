@@ -116,7 +116,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     //Error handeling for shift value outside the limits
-    const shiftLimit = 25; //define you	desire limit
+    const shiftLimit = 25; //define your	desired limit
     if(shift < 0 || shift > shiftLimit) {
       alert('Error: shift value must between 0 and ${shiftLimit}'); 
     }
