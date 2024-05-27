@@ -1,6 +1,12 @@
-// Wait for the DOM to load before executing the code
+// This line waits for the entire HTML document to be fully loaded and parsed
+// before executing the code within the function. This ensures that all necessary
+// HTML elements are available for manipulation.
+
 document.addEventListener('DOMContentLoaded', function() {
-  // Get references to the necessary elements
+  // These lines use `document.getElementById` to retrieve references to specific HTML
+  // elements based on their IDs. These references are stored in constant variables
+  // for easier access throughout the code.
+  
   const encodeBtn = document.getElementById('encode-btn');
   const decodeBtn = document.getElementById('decode-btn');
   const bruteforceBtn = document.getElementById('bruteforce-btn');
@@ -12,6 +18,13 @@ document.addEventListener('DOMContentLoaded', function() {
   const bruteforceMessage = document.getElementById('bruteforce-message');
   const bruteforceResult = document.getElementById('bruteforce-result');
 
+  // These lines add event listeners to the encode, decode, and bruteforce buttons.
+  // When a button is clicked, the corresponding arrow function is executed. These
+  // functions manipulate the visibility of the different content sections using
+  // `classList.remove('hidden')` and `classList.add('hidden')` to toggle between
+  // hidden and visible states. This creates a user interface where only the relevant
+  // content area is displayed for each Caesar Cipher operation.
+  
   // Event listener for encode button click
   encodeBtn.addEventListener('click', () => {
     encodeContent.classList.remove('hidden');
@@ -33,6 +46,14 @@ document.addEventListener('DOMContentLoaded', function() {
     bruteforceContent.classList.remove('hidden');
   });
 
+  // This section handles the "Encode" functionality. When the submit button is
+  // clicked, these lines:
+  // - Retrieve the message value from the 'encode-message' input field.
+  // - Parse the 'encode-shift' input value into an integer using `parseInt`.
+  // - Call the `caesarCipher` function (defined later) to encode the message
+  //   with the specified shift.
+  // - Update the 'encode-result' element's content to display the encoded message.
+  
   // Event listener for encode submit button click
   encodeSubmit.addEventListener('click', () => {
     const message = document.getElementById('encode-message').value;
@@ -48,6 +69,10 @@ document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('encode-result').textContent = `Encoded Message: ${encodedMessage}`;
   });
 
+  // This section works similarly to the encode functionality, but for decoding.
+  // It retrieves the message, shift value, calls `caesarCipher` with a modified
+  // shift (26 - shift for decoding), and updates the 'decode-result' element.
+  
   // Event listener for decode submit button click
   decodeSubmit.addEventListener('click', () => {
     const message = document.getElementById('decode-message').value;
