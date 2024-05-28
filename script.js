@@ -1,16 +1,20 @@
 // This line waits for the entire HTML document to be fully loaded and parsed
 // before executing the code within the function. This ensures that all necessary
 // HTML elements are available for manipulation.
+
 document.addEventListener('DOMContentLoaded', function() {
   // These lines use `document.getElementById` to retrieve references to specific HTML
   // elements based on their IDs. These references are stored in constant variables
   // for easier access throughout the code.
+
   const encodeBtn = document.getElementById('encode-btn');
   const decodeBtn = document.getElementById('decode-btn');
   const bruteforceBtn = document.getElementById('bruteforce-btn');
+
   const encodeContent = document.getElementById('encode-content');
   const decodeContent = document.getElementById('decode-content');
   const bruteforceContent = document.getElementById('bruteforce-content');
+
   const encodeSubmit = document.getElementById('encode-submit');
   const decodeSubmit = document.getElementById('decode-submit');
   const bruteforceMessage = document.getElementById('bruteforce-message');
@@ -22,6 +26,7 @@ document.addEventListener('DOMContentLoaded', function() {
   // `classList.remove('hidden')` and `classList.add('hidden')` to toggle between
   // hidden and visible states. This creates a user interface where only the relevant
   // content area is displayed for each Caesar Cipher operation.
+
   encodeBtn.addEventListener('click', () => {
     encodeContent.classList.remove('hidden');
     decodeContent.classList.add('hidden');
@@ -53,14 +58,14 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Error handling for non-numeric shift
     if (isNaN(shift)) {
-      document.getElementById('encode-result').textContent = 'Encoded Message: NaN';
+      alert("Error: shift value must be a number!");
       return;
     }
 
     // Error handling for shift value outside the limits
     const shiftLimit = 25; // Define your desired limit
     if (shift < 0 || shift > shiftLimit) {
-      document.getElementById('encode-result').textContent = 'Encoded Message: NaN';
+      alert(`Error: shift value must be between 0 and ${shiftLimit}`);
       return;
     }
 
@@ -78,14 +83,14 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Error handling for non-numeric shift
     if (isNaN(shift)) {
-      document.getElementById('decode-result').textContent = 'Decoded Message: NaN';
+      alert("Error: shift value must be a number!");
       return;
     }
 
     // Error handling for shift value outside the limits
     const shiftLimit = 25; // Define your desired limit
     if (shift < 0 || shift > shiftLimit) {
-      document.getElementById('decode-result').textContent = 'Decoded Message: NaN';
+      alert(`Error: shift value must be between 0 and ${shiftLimit}`);
       return;
     }
 
@@ -94,7 +99,6 @@ document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('decode-result').textContent = `Decoded Message: ${decodedMessage}`;
   });
 
-  // Function to perform Caesar cipher encryption/decryption
   function caesarCipher(message, shift) {
     // Error handling for letter 'e' as shift value
     if (shift === 69) {
@@ -130,7 +134,6 @@ document.addEventListener('DOMContentLoaded', function() {
     return result;
   }
 
-  // Function to create the shift table for bruteforce
   function createShiftTable(message) {
     let table = '';
     table += '<table class="table table-dark table-striped">';
